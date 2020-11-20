@@ -49,10 +49,10 @@ handleBuyingDrink = (id) => {
   console.log("Drink was bought");
   const tempMasterKegList = this.state.masterKegList;
   tempMasterKegList.map((keg) => {
-    if(keg.id == id && keg.amountLeft > 0) {
+    if(keg.id === id && keg.amountLeft > 0) {
       keg.amountLeft = keg.amountLeft - 1;
     }
-    else if (keg.id == id && keg.amountLeft <= 0) {
+    else if (keg.id === id && keg.amountLeft <= 0) {
       keg.quantity = "Sorry, Out Of Stock";
     }
     return keg;
@@ -64,14 +64,16 @@ handleBuyingDrink = (id) => {
 handleEditClick = () => {
   this.setState({editing: true});
 }
+
 handleEditingKegInList = (kegToBeEdited) => {
-  const tempMasterKegList = this.state.masterKegList.filter(keg => keg.id !== this.state.selectedKeg.id.concat(kegToBeEdited));
+  const tempMasterKegList = this.state.masterKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(kegToBeEdited);
   this.setState({
     masterKegList: tempMasterKegList,
     editing: false,
     selectedTicket: null
   });
 }
+
 render() {
   let currentlyVisibleState = null;
   let buttonText = null;
