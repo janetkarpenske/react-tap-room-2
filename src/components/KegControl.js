@@ -70,7 +70,8 @@ handleEditingKegInList = (kegToBeEdited) => {
   this.setState({
     masterKegList: tempMasterKegList,
     editing: false,
-    selectedTicket: null
+    selectedKeg: null,
+    formVisibleOnPage: false
   });
 }
 
