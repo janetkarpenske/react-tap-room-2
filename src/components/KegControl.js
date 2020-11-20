@@ -41,12 +41,19 @@ handleSelectingKeg = (id) => {
 
 handleBuyingDrink = (id) => {
   console.log("Drink was bought");
-  // const thisKeg = this.state.masterKegList.filter(keg => keg.id ===id)[0];
-  // if (thisKeg.amountLeft > 0) {
-  //   this.setState({
-  //     thisKeg.amountLeft: thisKeg.amountLeft - 1;
-  //   });
-  //}
+  const tempMasterKegList = this.state.masterKegList;
+  tempMasterKegList.map((keg) => {
+    if(keg.id == id && keg.amountLeft > 0) {
+      keg.amountLeft = keg.amountLeft - 1;
+    }
+    else if (keg.id == id && keg.amountLeft <= 0) {
+      keg.quantity = "Sorry, Out Of Stock";
+    }
+    return keg;
+  })
+  this.setState ({
+    masterKegList: tempMasterKegList
+  })
 }
 render() {
   let currentlyVisibleState = null;
