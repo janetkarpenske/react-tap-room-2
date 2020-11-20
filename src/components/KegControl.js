@@ -38,7 +38,13 @@ handleSelectingKeg = (id) => {
     selectedKeg: selectedKeg
   })
 }
-
+handleDeletingKeg = (id) => {
+  const tempMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
+  this.setState({
+    masterKegList: tempMasterKegList,
+    selectedKeg: null
+  })
+}
 handleBuyingDrink = (id) => {
   console.log("Drink was bought");
   const tempMasterKegList = this.state.masterKegList;
@@ -60,7 +66,7 @@ render() {
   let buttonText = null;
 
   if (this.state.selectedKeg != null) {
-    currentlyVisibleState = <KegDetails keg = {this.state.selectedKeg} onClickingBuy= {this.handleBuyingDrink}/>
+    currentlyVisibleState = <KegDetails keg = {this.state.selectedKeg} onClickingBuy= {this.handleBuyingDrink} onClickingDelete = {this.handleDeletingKeg}/>
     buttonText = "Back to List";
   }
   else if (this.state.formVisibleOnPage) {
