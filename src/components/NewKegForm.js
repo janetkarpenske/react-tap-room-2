@@ -12,11 +12,17 @@ function NewKegForm (props) {
   return (
     <React.Fragment>
       <form onSubmit={handleKegFormSubmission}>
-        <input type='text' name='name' placeholder='Brew Name'/>
-        <input type='text' name='brand' placeholder='Brand Name'/>
-        <input type='text' name='price' placeholder='Price'/>
-        <input type='text' name='alcoholContent' placeholder='Alcohol Percentage'/>
-        <button type='submit'>{props.buttonText}</button>
+        <input className="form-control" type='text' name='name' placeholder='Brew Name' required/><br/>
+        <input className="form-control" type='text' name='brand' placeholder='Brand Name' required/><br/>
+        <div className="row">
+          <div className="col-md-6">
+            <input className="form-control" type='number' name='price' placeholder='Price' required/><br/>
+          </div>
+          <div className="col-md-6">
+          <input className="form-control" type='number' name='alcoholContent' placeholder='Alcohol Percentage' required/><br/>
+          </div>
+        </div>
+        <button className="btn btn-dark btn-sm" type='submit'>Add Brew</button><br/><br/>
       </form>
     </React.Fragment>
   );

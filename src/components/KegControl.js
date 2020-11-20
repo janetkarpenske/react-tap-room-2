@@ -65,7 +65,7 @@ render() {
   }
   else if (this.state.formVisibleOnPage) {
     currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
-    buttonText = "Add Brew"
+    buttonText = "Back To List"
   }
   else {
     currentlyVisibleState =  <KegList kegList={this.state.masterKegList} onKegSelection={this.handleSelectingKeg}/>;
@@ -74,7 +74,7 @@ render() {
   return (
     <React.Fragment>
       {currentlyVisibleState}
-      <button onClick={this.handleClick}>{buttonText}</button>
+      <button className="btn btn-outline-dark btn-sm" onClick={this.handleClick}>{buttonText}</button>
     </React.Fragment>
     );
   } 
