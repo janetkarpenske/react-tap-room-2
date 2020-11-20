@@ -7,11 +7,12 @@ function KegList(props){
     <React.Fragment>
       {props.kegList.map((keg) =>
         <Keg
-
+        whenKegIsClicked = { props.onKegSelection }
         name={keg.name}
         brand={keg.brand}
         price={keg.price}
         alcoholContent={keg.alcoholContent}
+        amountLeft={keg.amountLeft}
         id={keg.id}
         key={keg.id}/>
       )}
@@ -21,7 +22,8 @@ function KegList(props){
 
 //We are saying that KegList has one property passed down from KegControl - an array called KegList, which is our masterKegList we passed down. Up above we pass in this property and then tell it to map through it.
 KegList.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.array,
+  onKegSelection: PropTypes.func
 };
 
 export default KegList;
