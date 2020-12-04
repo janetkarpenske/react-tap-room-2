@@ -14,7 +14,9 @@ describe("rootReducer", () => {
       formVisibleOnPage: false
     });
   });
-
+  test('Check that initial state of kegListReducer matches root reducer', () => {
+    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, { type: null }));
+  });
 
 
 
