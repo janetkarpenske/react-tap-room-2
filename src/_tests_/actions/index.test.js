@@ -1,8 +1,8 @@
-import * as actions from './../../../actions';
-import * as c from './../../../actions/actionTypes';
+import * as actions from './../../actions';
+import * as c from './../../actions/actionTypes';
 
 describe('help queue actions', () => {
-  it('should create delete keg action', () => {
+  it('should create DELETE_KEG action', () => {
     expect(actions.deleteKeg(1)).toEqual({
       type: c.DELETE_KEG,
       id: 1
@@ -24,6 +24,11 @@ describe('help queue actions', () => {
       alcoholContent: 8, 
       amountLeft: 124, 
       id: 1
+    });
+  });
+  it('toggleEdit should create TOGGLE_EDIT action', () => {
+    expect(actions.toggleEdit()).toEqual({
+      type: c.TOGGLE_EDIT
     });
   });
 });
