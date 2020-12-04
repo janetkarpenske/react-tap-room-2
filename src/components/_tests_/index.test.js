@@ -12,7 +12,7 @@ describe("rootReducer", () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterKegList: {},
       formVisibleOnPage: false,
-      
+      editing: false
     });
   });
   test('Check that initial state of kegListReducer matches root reducer', () => {
