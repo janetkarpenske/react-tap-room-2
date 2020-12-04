@@ -1,7 +1,5 @@
 import React from "react";
 import Menu from "./Menu";
-import PropTypes from "prop-types";
-
 
 const menu = [  
   {  

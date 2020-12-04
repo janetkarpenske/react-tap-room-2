@@ -10,8 +10,6 @@ import * as a from './actions';
 class KegControl extends React.Component {
   constructor(props) {
     super(props);
-  // this.state = {
-  // };
 }
 handleClick = () => {
   const { dispatch } = this.props;
@@ -96,7 +94,7 @@ render() {
     buttonText = "Back to List";
   }
   else if (this.props.selectedKeg != null) {
-    console.log("Correct else statement reached");
+    console.log("CORRECT else statement reached");
     currentlyVisibleState = <KegDetails keg = {this.props.selectedKeg} onClickingBuy= {this.handleBuyingDrink} onClickingDelete = {this.handleDeletingKeg} onClickingEdit = {this.handleEditClick}/>
     buttonText = "Back to List";
   }
@@ -120,7 +118,7 @@ KegControl.propTypes = {
   masterKegList: PropTypes.object,
   formVisibleOnPage: PropTypes.bool,
   editing: PropTypes.bool,
-  selectedKeg: PropTypes.string
+  selectedKeg: PropTypes.object
 };
 
 const mapStateToProps = state => {
@@ -128,7 +126,7 @@ const mapStateToProps = state => {
     masterKegList: state.masterKegList,
     formVisibleOnPage: state.formVisibleOnPage,
     editing: state.editing,
-    selectedKeg: state.selectKeg
+    selectedKeg: state.selectedKeg
   }
 }
 KegControl = connect(mapStateToProps)(KegControl);

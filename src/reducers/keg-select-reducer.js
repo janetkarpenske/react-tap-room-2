@@ -1,9 +1,6 @@
 import * as c from './../components/actions/actionTypes';
-import rootReducer from './index';
-
 
 export default (state = null, action) => {
-  let tempSelectedKeg;
   switch (action.type) {
   case c.SELECT_KEG:
     console.log("Keg selection reducer reached.");
