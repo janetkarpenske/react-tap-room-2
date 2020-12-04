@@ -20,6 +20,18 @@ describe("rootReducer", () => {
   test('Check that initial state of formVisibleReducer matches root reducer', () => {
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
   });
-
+  test('Check that ADD_KEG action works for kegListReducer and root reducer', () => {
+    const action = {
+      type: c.ADD_KEG,
+      name: 'Porter', 
+      brand: 'Deschutes', 
+      price: 6, 
+      alcoholContent: 8, 
+      amountLeft: 124, 
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
+  });
 
 });
