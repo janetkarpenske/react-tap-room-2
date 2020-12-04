@@ -1,4 +1,4 @@
-import * as c from './../components/actions/ActionTypes';
+import * as c from './../components/actions/actionTypes';
 
 export default (state = {}, action) => {
   const { name, brand, price, alcoholContent, amountLeft, id } = action;
