@@ -18,6 +18,8 @@ export default (state = {}, action) => {
       const newState = { ...state };
       delete newState[id];
       return newState;
+    case c.BUY_DRINK:
+      
     default:
       return state;
   }

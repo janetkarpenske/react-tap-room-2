@@ -11,8 +11,6 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
   this.state = {
-    // formVisibleOnPage: false,
-    // masterKegList: [],
     selectedKeg: null,
     editing: false
   };
@@ -20,7 +18,6 @@ class KegControl extends React.Component {
 handleClick = () => {
   if (this.state.selectedKeg != null) {
     this.setState({
-      // formVisibleOnPage:false,
       selectedKeg: null,
       editing: false
     });
@@ -67,13 +64,13 @@ handleEditClick = () => {
   this.setState({editing: true});
 }
 
-handleEditingKegInList = (kegToBeEdited) => {
+handleEditingKegInList = (kegToEdit) => {
   const { dispatch } = this.props;
-    const action = a.addKeg(kegToBeEdited);
+    const action = a.addKeg(kegToEdit);
     dispatch(action);
     this.setState({
       editing: false,
-      selectedTicket: null
+      selectedKeg: null
   });
 }
 
