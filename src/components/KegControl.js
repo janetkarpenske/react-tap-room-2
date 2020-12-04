@@ -45,20 +45,32 @@ handleDeletingKeg = (id) => {
     this.setState({selectedKeg: null});
 }
 handleBuyingDrink = (id) => {
-  console.log("Drink was bought");
-  const tempMasterKegList = this.state.masterKegList;
-  tempMasterKegList.map((keg) => {
-    if(keg.id === id && keg.amountLeft > 0) {
-      keg.amountLeft = keg.amountLeft - 1;
-    }
-    else if (keg.id === id && keg.amountLeft <= 0) {
-      keg.quantity = "Sorry, Out Of Stock";
-    }
-    return keg;
-  })
-  this.setState ({
-    masterKegList: tempMasterKegList
-  })
+  // const { dispatch } = this.props;
+  //   const action = {
+  //     type: "BUY_DRINK",
+  //     id: id
+  //   };
+  //   dispatch(action);
+
+  // console.log("Drink was bought");
+  const { dispatch } = this.props;
+  const action = a.buyDrink(id);
+  dispatch(action);
+
+
+  // const tempMasterKegList = this.state.masterKegList;
+  // tempMasterKegList.map((keg) => {
+  //   if(keg.id === id && keg.amountLeft > 0) {
+  //     keg.amountLeft = keg.amountLeft - 1;
+  //   }
+  //   else if (keg.id === id && keg.amountLeft <= 0) {
+  //     keg.quantity = "Sorry, Out Of Stock";
+  //   }
+  //   return keg;
+  // })
+  // this.setState ({
+  //   masterKegList: tempMasterKegList
+  // })
 }
 handleEditClick = () => {
   this.setState({editing: true});

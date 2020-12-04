@@ -19,3 +19,8 @@ export const addKeg = (keg) => {
     id: id
   }
 }
+
+export const buyDrink = id => ({
+  type: 'BUY_DRINK',
+  id
+});
