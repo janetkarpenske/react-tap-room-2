@@ -1,5 +1,5 @@
-import * as actions from './../../actions';
-import * as c from './../../actions/actionTypes';
+import * as actions from './../../../actions';
+import * as c from './../../../actions/actionTypes';
 
 describe('help queue actions', () => {
   it('should create delete keg action', () => {

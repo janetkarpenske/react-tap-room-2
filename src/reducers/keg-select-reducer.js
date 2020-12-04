@@ -1,4 +1,4 @@
-import * as c from './../components/actions/actionTypes';
+import * as c from './../actions/actionTypes';
 
 export default (state = null, action) => {
   switch (action.type) {
