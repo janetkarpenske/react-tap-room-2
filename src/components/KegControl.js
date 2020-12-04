@@ -10,20 +10,16 @@ import * as a from './actions';
 class KegControl extends React.Component {
   constructor(props) {
     super(props);
-  this.state = {
-    // selectedKeg: null,
-  };
+  // this.state = {
+  // };
 }
 handleClick = () => {
-  if (this.props.selectedKeg != null) {
-    // this.setState({
-    //   selectedKeg: null,
-    // });
-    const { dispatch } = this.props;
-    const action = a.selectKeg('null'); //do I need to pass in an id?
-    dispatch(action);
-  } else {
   const { dispatch } = this.props;
+  if (this.props.selectedKeg != null) {
+    const action1 = a.setKegNull(); //do I need to pass in an id?
+    dispatch(action1);
+  } else {
+  // const { dispatch } = this.props;
   const action = a.toggleForm();
   dispatch(action);
   }
@@ -35,12 +31,10 @@ handleAddingNewKegToList = (newKeg) => {
     const action2 = a.toggleForm();
     dispatch(action2);
 }
-handleSelectingKeg = (keg) => {
+handleSelectingKeg = (id) => {
   const { dispatch } = this.props;
-  const action = a.selectKeg(keg)
+  const action = a.selectKeg(id, this.props.masterKegList)
   dispatch(action);
-  // const selectedKeg = this.props.masterKegList[id];
-  //   this.setState({selectedKeg: selectedKeg});
 }
 handleDeletingKeg = (id) => {
   const { dispatch } = this.props;
@@ -90,9 +84,8 @@ handleEditingKegInList = (kegToEdit) => {
     dispatch(action);
     const action2 = a.toggleEdit();
     dispatch(action2);
-    this.setState({
-      selectedKeg: null
-  });
+    const action3 = a.setKegNull();
+    dispatch(action3);
 }
 
 render() {
@@ -103,6 +96,7 @@ render() {
     buttonText = "Back to List";
   }
   else if (this.props.selectedKeg != null) {
+    console.log("Correct else statement reached");
     currentlyVisibleState = <KegDetails keg = {this.props.selectedKeg} onClickingBuy= {this.handleBuyingDrink} onClickingDelete = {this.handleDeletingKeg} onClickingEdit = {this.handleEditClick}/>
     buttonText = "Back to List";
   }

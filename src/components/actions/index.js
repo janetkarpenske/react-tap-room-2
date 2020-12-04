@@ -1,3 +1,5 @@
+import * as c from './actionTypes';
+
 export const deleteKeg = id => ({
   type: 'DELETE_KEG',
   id
@@ -29,15 +31,15 @@ export const buyDrink = id => ({
   id
 });
 
-export const selectKeg = (keg) => {
-  const { name, brand, price, alcoholContent, amountLeft, id } = keg;
+export const selectKeg = (id,kegList) => {
   return {
-    type: 'SELECT_KEG',
-    name: name,
-    brand: brand,
-    price: price,
-    alcoholContent: alcoholContent,
-    amountLeft: amountLeft,
-    id: id
-  }
+    type: c.SELECT_KEG,
+    id: id,
+    kegList: kegList
+  };
+};
+export const setKegNull = () => {
+  return {
+    type: c.SET_KEG_NULL    
+  };
 };
