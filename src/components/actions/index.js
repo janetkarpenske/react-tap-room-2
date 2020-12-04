@@ -28,3 +28,8 @@ export const buyDrink = id => ({
   type: 'BUY_DRINK',
   id
 });
+
+export const selectKeg = id => ({
+  type: 'SELECT_KEG',
+  id
+});

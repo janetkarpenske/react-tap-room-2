@@ -12,14 +12,12 @@ class KegControl extends React.Component {
     super(props);
   this.state = {
     selectedKeg: null,
-    // editing: false
   };
 }
 handleClick = () => {
   if (this.state.selectedKeg != null) {
     this.setState({
       selectedKeg: null,
-      //editing: false
     });
   } else {
   const { dispatch } = this.props;
@@ -76,7 +74,6 @@ handleEditClick = () => {
   const { dispatch } = this.props;
   const action = a.toggleEdit();
   dispatch(action);
-  // this.setState({editing: true});
 }
 
 handleEditingKegInList = (kegToEdit) => {
@@ -86,7 +83,6 @@ handleEditingKegInList = (kegToEdit) => {
     const action2 = a.toggleEdit();
     dispatch(action2);
     this.setState({
-      // editing: false,
       selectedKeg: null
   });
 }
