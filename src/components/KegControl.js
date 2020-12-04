@@ -45,17 +45,17 @@ handleDeletingKeg = (id) => {
     this.setState({selectedKeg: null});
 }
 handleBuyingDrink = (id) => {
-  // const { dispatch } = this.props;
-  //   const action = {
-  //     type: "BUY_DRINK",
-  //     id: id
-  //   };
-  //   dispatch(action);
+  const { dispatch } = this.props;
+    const action = {
+      type: "BUY_DRINK",
+      id: id
+    };
+    dispatch(action);
 
   // console.log("Drink was bought");
-  const { dispatch } = this.props;
-  const action = a.buyDrink(id);
-  dispatch(action);
+  // const { dispatch } = this.props;
+  // const action = a.buyDrink(id);
+  // dispatch(action);
 
 
   // const tempMasterKegList = this.state.masterKegList;

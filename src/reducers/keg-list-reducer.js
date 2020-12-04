@@ -19,19 +19,19 @@ export default (state = {}, action) => {
       tempState = { ...state };
       delete tempState[id];
       return tempState;
-    case c.BUY_DRINK:
-      console.log("Buy drink reducer reached");
+    // case c.BUY_DRINK:
+      // console.log("Buy drink reducer reached");
+      // tempState = {...state};
+      // let newNumOfDrinks = tempState[id].amountLeft - 1;
+      // console.log("New Num of Drinks: " + newNumOfDrinks);
+      // tempState[id].dislikes = newNumOfDrinks;
+      // console.log("Temp State: " + tempState);
+      // return tempState;
+    case 'BUY_DRINK':
       tempState = {...state};
-      let newNumOfDrinks = tempState[id].amountLeft - 1;
-      console.log("New Num of Drinks: " + newNumOfDrinks);
-      tempState[id].dislikes = newNumOfDrinks;
-      console.log("Temp State: " + tempState);
+      const newNumberOfDrinks = tempState[id].amountLeft - 1;
+      tempState[id].amountLeft = newNumberOfDrinks;
       return tempState;
-    // case 'BUY_DRINK':
-    //   tempState = {...state};
-    //   const newNumberOfDrinks = tempState[id].amountLeft - 1;
-    //   tempState[id].amountLeft = newNumberOfDrinks;
-    //   return tempState;
     default:
       return state;
   }
