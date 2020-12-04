@@ -11,7 +11,8 @@ describe("rootReducer", () => {
   test('Should return default state if no action type is specified', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterKegList: {},
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      
     });
   });
   test('Check that initial state of kegListReducer matches root reducer', () => {
