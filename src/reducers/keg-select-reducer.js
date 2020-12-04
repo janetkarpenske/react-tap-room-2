@@ -1,8 +1,10 @@
 import * as c from './../components/actions/actionTypes';
-import kegListReducer from './keg-list-reducer';
+import rootReducer from './index';
+
 
 export default (state = null, action) => {
-  const { id } = action;
+  const { name, brand, price, alcoholContent, amountLeft, id } = action;
+  console.log("ACTION: " + action.id);
   let tempSelectedKeg;
   switch (action.type) {
   case c.SELECT_KEG:
@@ -15,7 +17,9 @@ export default (state = null, action) => {
       tempSelectedKeg = null;
     }
     else {
-      const tempSelectedKeg = kegListReducer[id];
+      
+      const tempSelectedKeg = rootReducer.masterKegList[id];
+      console.log("MAYBE: " + this.store.masterKegList[id]);
       console.log("This keg was selected: " + tempSelectedKeg);
     }
     return tempSelectedKeg;

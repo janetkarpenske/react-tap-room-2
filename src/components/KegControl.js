@@ -35,9 +35,9 @@ handleAddingNewKegToList = (newKeg) => {
     const action2 = a.toggleForm();
     dispatch(action2);
 }
-handleSelectingKeg = (id) => {
+handleSelectingKeg = (keg) => {
   const { dispatch } = this.props;
-  const action = a.selectKeg(id)
+  const action = a.selectKeg(keg)
   dispatch(action);
   // const selectedKeg = this.props.masterKegList[id];
   //   this.setState({selectedKeg: selectedKeg});
