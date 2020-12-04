@@ -43,5 +43,30 @@ describe('kegListReducer', () => {
       amountLeft: amountLeft,
       id: id
     };
+    expect(kegListReducer({}, action)).toEqual({
+      [id] : {
+      name: name,
+      brand: brand,
+      price: price,
+      alcoholContent: alcoholContent,
+      amountLeft: amountLeft,
+      id: id
+      }
+    });
 });
+
+test('Should successfully delete a keg', () => {
+  action = {
+    type: c.DELETE_KEG,
+    id: 1
+  };
+  expect(kegListReducer(currentState, action)).toEqual({
+    2: {name: 'IPA', 
+    brand: 'Elysian', 
+    price: 5, 
+    alcoholContent: 7, 
+    amountLeft: 124, 
+    id: 1 }
+  });
+})
 })
