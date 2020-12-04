@@ -55,4 +55,12 @@ describe("rootReducer", () => {
     store.dispatch(action);
     expect(store.getState().editing).toEqual(editingReducer(undefined, action));
   });
+  
+  // test('Check that SELECT_KEG action works for editingReducer and root reducer', () => {
+  //   const action = {
+  //     type: c.SELECT_KEG
+  //   }
+  //   store.dispatch(action);
+  //   expect(store.getState().selectedKeg).toEqual(kegSelectReducer(undefined, action));
+  // });
 });

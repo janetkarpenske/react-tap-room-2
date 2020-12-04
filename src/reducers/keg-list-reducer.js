@@ -32,6 +32,7 @@ export default (state = {}, action) => {
       const newNumberOfDrinks = tempState[id].amountLeft - 1;
       tempState[id].amountLeft = newNumberOfDrinks;
       return tempState;
+    
     default:
       return state;
   }
