@@ -94,7 +94,7 @@ handleEditingKegInList = (kegToEdit) => {
 render() {
   let currentlyVisibleState = null;
   let buttonText = null;
-  if (this.state.editing) {
+  if (this.props.editing) {
     currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList}/>
     buttonText = "Back to List";
   }
