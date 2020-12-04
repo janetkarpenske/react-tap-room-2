@@ -1,5 +1,5 @@
 import kegListReducer from './../../reducers/keg-list-reducer.js';
-//import * as c from './../actions/actionTypes';
+import * as c from './../actions/actionTypes';
 
 describe('kegListReducer', () => {
 
@@ -32,5 +32,16 @@ describe('kegListReducer', () => {
   test('Should return default state if no action type is given', () => {
     expect(kegListReducer({}, { type: null })).toEqual({});
   });
-
+  test('Should add new keg data to masterKegList', () => {
+    const { name, brand, price, alcoholContent, amountLeft, id } = kegData;
+    action = {
+      type: c.ADD_KEG,
+      name: name,
+      brand: brand,
+      price: price,
+      alcoholContent: alcoholContent,
+      amountLeft: amountLeft,
+      id: id
+    };
 });
+})
