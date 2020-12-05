@@ -31,4 +31,9 @@ describe('help queue actions', () => {
       type: c.TOGGLE_EDIT
     });
   });
+  it('setKegNull should create SET_KEG_NULL action', () => {
+    expect(actions.setKegNull()).toEqual({
+      type: c.SET_KEG_NULL
+    });
+  });
 });
