@@ -7,9 +7,9 @@ import MenuControl from "./menu/MenuControl";
 function App(){
   return ( 
     <React.Fragment>
-      
-      <div className="container">
       <Header />
+      <div className="container">
+      
       <div className="row">
         <div className="col-md-6">
           <KegControl />

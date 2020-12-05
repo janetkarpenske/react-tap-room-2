@@ -24,7 +24,7 @@ const menu = [
  function MenuList(){
   return (
     <React.Fragment>
-      <h2 className="center-align">Menu</h2>
+      <h2 className="center-align">menu</h2>
       <hr/>
       {menu.map((menu, index) =>
         <Menu 
