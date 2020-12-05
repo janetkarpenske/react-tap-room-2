@@ -19,7 +19,6 @@ describe('kegListReducer', () => {
     amountLeft: 124, 
     id: 1 }
   }
-
   const kegData = {
     name: 'Porter', 
     brand: 'Deschutes', 
@@ -28,7 +27,6 @@ describe('kegListReducer', () => {
     amountLeft: 124, 
     id: 1 
   };
-
   test('Should return default state if no action type is given', () => {
     expect(kegListReducer({}, { type: null })).toEqual({});
   });
@@ -54,7 +52,6 @@ describe('kegListReducer', () => {
       }
     });
 });
-
 test('Should successfully delete a keg', () => {
   action = {
     type: c.DELETE_KEG,

@@ -14,10 +14,9 @@ class KegControl extends React.Component {
 handleClick = () => {
   const { dispatch } = this.props;
   if (this.props.selectedKeg != null) {
-    const action1 = a.setKegNull(); //do I need to pass in an id?
+    const action1 = a.setKegNull();
     dispatch(action1);
   } else {
-  // const { dispatch } = this.props;
   const action = a.toggleForm();
   dispatch(action);
   }
@@ -40,35 +39,11 @@ handleDeletingKeg = (id) => {
     dispatch(action1);
     const action2 = a.setKegNull();
     dispatch(action2);
-    // this.setState({selectedKeg: null});
 }
 handleBuyingDrink = (id) => {
   const { dispatch } = this.props;
-    const action = {
-      type: "BUY_DRINK",
-      id: id
-    };
-    dispatch(action);
-
-  // console.log("Drink was bought");
-  // const { dispatch } = this.props;
-  // const action = a.buyDrink(id);
-  // dispatch(action);
-
-
-  // const tempMasterKegList = this.state.masterKegList;
-  // tempMasterKegList.map((keg) => {
-  //   if(keg.id === id && keg.amountLeft > 0) {
-  //     keg.amountLeft = keg.amountLeft - 1;
-  //   }
-  //   else if (keg.id === id && keg.amountLeft <= 0) {
-  //     keg.quantity = "Sorry, Out Of Stock";
-  //   }
-  //   return keg;
-  // })
-  // this.setState ({
-  //   masterKegList: tempMasterKegList
-  // })
+  const action = a.buyDrink(id);
+  dispatch(action);
 }
 handleEditClick = () => {
   const { dispatch } = this.props;

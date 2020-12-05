@@ -25,12 +25,10 @@ export const addKeg = (keg) => {
     id: id
   }
 }
-
 export const buyDrink = id => ({
   type: 'BUY_DRINK',
   id
 });
-
 export const selectKeg = (id,kegList) => {
   return {
     type: c.SELECT_KEG,
