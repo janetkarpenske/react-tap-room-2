@@ -9,7 +9,7 @@ function KegDetails(props) {
       <h3><strong>{keg.brand}'s {keg.name}</strong></h3>
       <h4>${keg.price}</h4>
       <h4><em>Alcohol Content </em>{keg.alcoholContent}%</h4>
-      <h4>Amount Left (in pints): {keg.amountLeft}</h4>
+      <h4>Amount Left in Stock(in pints): {keg.amountLeft}</h4>
       <button className="btn btn-outline-dark btn-sm" onClick={ () => onClickingBuy(keg.id) }>Buy</button>
       <button className="btn btn-outline-dark btn-sm" onClick={ () => onClickingDelete(keg.id) }>Delete Brew</button>
       <button className="btn btn-outline-dark btn-sm" onClick={ () => onClickingEdit(keg.id) }>Edit Brew</button>
